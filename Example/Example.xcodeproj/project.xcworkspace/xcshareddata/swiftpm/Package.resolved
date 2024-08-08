@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWAppFirstInstall",
       "state" : {
-        "branch" : "main",
-        "revision" : "4a1a025b3182c5e4eb6b815875b067b3ce447a4e"
+        "revision" : "19e8f3488f714549a5ccf67871ff131d026428b2",
+        "version" : "1.0.0"
       }
     },
     {
