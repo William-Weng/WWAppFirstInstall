@@ -43,6 +43,8 @@ private extension ViewController {
     
     func demo() {
         
+        WWAppFirstInstall.shared.clean()
+        
         let appIdArray = [
             "idv.william.Example1",
             "idv.william.Example2",

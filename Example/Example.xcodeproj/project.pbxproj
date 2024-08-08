@@ -15,6 +15,7 @@
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		8130039027D5D18100436128 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130038F27D5D18100436128 /* Constant.swift */; };
 		8130039227D5D19000436128 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130039127D5D19000436128 /* Extension.swift */; };
+		81EDB6762C64CC6200D76A70 /* WWAppFirstInstall in Frameworks */ = {isa = PBXBuildFile; productRef = 81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
+				81EDB6762C64CC6200D76A70 /* WWAppFirstInstall in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +48,7 @@
 			children = (
 				3DBCD87226F198EF00522E3B /* Example */,
 				3DBCD87126F198EF00522E3B /* Products */,
+				81EDB6742C64CC6200D76A70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +115,13 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		81EDB6742C64CC6200D76A70 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +140,7 @@
 			name = Example;
 			packageProductDependencies = (
 				3DAC9C1827016E78006663C2 /* WWPrint */,
+				81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -432,6 +443,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
+		};
+		81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 817AC0BB2C64C91A00BA3DAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */;
+			productName = WWAppFirstInstall;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
