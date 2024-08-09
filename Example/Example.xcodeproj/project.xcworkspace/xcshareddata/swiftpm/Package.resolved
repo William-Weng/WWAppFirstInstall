@@ -1,12 +1,13 @@
 {
+  "originHash" : "e364af98c3f10e1eb2a9039d121cce8065e89f567e898d117b2a2644a6d27853",
   "pins" : [
     {
       "identity" : "wwappfirstinstall",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/William-Weng/WWAppFirstInstall",
       "state" : {
-        "revision" : "19e8f3488f714549a5ccf67871ff131d026428b2",
-        "version" : "1.0.0"
+        "revision" : "faa7f295c255ef03704bb832c76d904b5f9a8a7a",
+        "version" : "1.0.1"
       }
     },
     {
@@ -28,5 +29,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
