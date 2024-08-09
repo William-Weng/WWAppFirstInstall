@@ -14,7 +14,9 @@ open class WWAppFirstInstall: NSObject {
     
     public static let shared = WWAppFirstInstall()
     
-    @WWKeychain("WWAppFirstInstall") var jsonString: String?
+    private let baseTime = 1723075200   // 基準的秒數 (2024-08-08 => 第0秒)
+    
+    @WWKeychain("WWAppFirstInstall") private var jsonString: String?
     
     private override init() {}
 }
@@ -36,7 +38,7 @@ public extension WWAppFirstInstall {
     /// - Returns: Bool
     func detect(appId: String) -> Bool {
         
-        guard let dictionary = dictionary() else { return false }
+        guard let dictionary = jsonDictionary() else { return false }
         
         if let info = dictionary[appId] { return true }
         return false
@@ -47,7 +49,7 @@ public extension WWAppFirstInstall {
     /// - Returns: Bool
     func reset(appId: String) -> Bool {
         
-        guard var dictionary = dictionary() else { return false }
+        guard var dictionary = jsonDictionary() else { return false }
         
         if let info = dictionary[appId] {
             dictionary[appId] = nil
@@ -70,13 +72,15 @@ public extension WWAppFirstInstall {
     /// - Returns: [String: Int]?
     func dictionary() -> [String: Int]? {
         
-        guard let jsonObject = jsonString?._jsonObject(),
-              let dictionary = jsonObject as? [String: Int]
-        else {
-            return nil
+        guard let jsonDictionary = jsonDictionary() else { return nil }
+        
+        var timeDictionary: [String: Int] = [:]
+        
+        jsonDictionary.map { key, value in
+            timeDictionary[key] = value + baseTime
         }
         
-        return dictionary
+        return timeDictionary
     }
     
     /// 全紀錄清除
@@ -92,7 +96,7 @@ private extension WWAppFirstInstall {
     /// - Parameter appId: String
     func insertAppId(_ appId: String) -> Bool {
         
-        if var dictionary = dictionary(), !dictionary.isEmpty {
+        if var dictionary = jsonDictionary(), !dictionary.isEmpty {
             
             if let info = dictionary[appId] { return false }
             
@@ -108,10 +112,24 @@ private extension WWAppFirstInstall {
         return true
     }
     
-    /// 安裝時間 (秒)
+    /// 安裝時間 (秒 -> 從2024-08-08開始計算 => 節省jsonString的字串大小)
     /// - Returns: Int
     func installTime() -> Int {
-        return Int(Date().timeIntervalSince1970)
+        let time = Int(Date().timeIntervalSince1970)
+        return time - baseTime
+    }
+    
+    /// 取得原始的全記錄 => [<AppId>: <安裝時間>]
+    /// - Returns: [String: Int]?
+    func jsonDictionary() -> [String: Int]? {
+        
+        guard let jsonObject = jsonString?._jsonObject(),
+              let dictionary = jsonObject as? [String: Int]
+        else {
+            return nil
+        }
+        
+        return dictionary
     }
 }
 

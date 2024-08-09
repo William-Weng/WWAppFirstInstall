@@ -11,7 +11,7 @@
 ## [Installation with Swift Package Manager](https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/使用-spm-安裝第三方套件-xcode-11-新功能-2c4ffcf85b4b)
 ```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWAppFirstInstall.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWAppFirstInstall.git", .upToNextMajor(from: "1.0.1"))
 ]
 ```
 
@@ -22,7 +22,7 @@ dependencies: [
 |detect(appId:)|檢測該AppId是否有安裝過？|
 |reset(appId:)|將安裝過的記錄刪除|
 |installTime(appId:)|取得安裝時間 (秒)|
-|dictionary()|取得安裝過的全記錄 => [<AppId>: <安裝時間>]|
+|dictionary()|取得安裝過的全記錄 => [《AppId》:《安裝時間》]|
 |clean()|全紀錄清除|
 
 ## Example
