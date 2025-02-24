@@ -1,5 +1,4 @@
 {
-  "originHash" : "e364af98c3f10e1eb2a9039d121cce8065e89f567e898d117b2a2644a6d27853",
   "pins" : [
     {
       "identity" : "wwappfirstinstall",
@@ -29,5 +28,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

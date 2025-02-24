@@ -11,24 +11,26 @@ import WWKeychain
 
 // MARK: - WWAppFirstInstall (單例)
 open class WWAppFirstInstall: NSObject {
-    
-    public static let shared = WWAppFirstInstall()
-    
+        
     private let baseTime = 1723075200   // 基準的秒數 (2024-08-08 => 第0秒)
     
-    @WWKeychain("WWAppFirstInstall") private var jsonString: String?
+    private var key: String = "WWAppFirstInstall"
     
     private override init() {}
+    
+    public convenience init(key: String) {
+        self.init()
+        self.key = key
+    }
 }
 
-// MARK: - 小工具
+// MARK: - 公開函式
 public extension WWAppFirstInstall {
         
     /// 加入AppId到紀錄之中
     /// - Parameter appId: String
     /// - Returns: Bool
     func insert(appId: String) -> Bool {
-        
         guard !detect(appId: appId) else { return false }
         return insertAppId(appId)
     }
@@ -53,7 +55,7 @@ public extension WWAppFirstInstall {
         
         if let info = dictionary[appId] {
             dictionary[appId] = nil
-            self.jsonString = dictionary._jsonString(options: .withoutEscapingSlashes)
+            setJSONString(dictionary._jsonString(options: .withoutEscapingSlashes))
             return true
         }
         
@@ -85,13 +87,27 @@ public extension WWAppFirstInstall {
     
     /// 全紀錄清除
     func clean() {
-        jsonString = nil
+        setJSONString(nil)
     }
 }
 
 // MARK: - 小工具
 private extension WWAppFirstInstall {
-        
+    
+    /// 設定數值
+    /// - Parameter jsonString: String?
+    func setJSONString(_ jsonString: String?) {
+        @WWKeychain(key) var value: String?
+        value = jsonString
+    }
+    
+    /// 取得數值
+    /// - Returns: String?
+    func getJSONString() -> String? {
+        @WWKeychain(key) var jsonString: String?
+        return jsonString
+    }
+    
     /// 記錄AppId + 安裝時間
     /// - Parameter appId: String
     func insertAppId(_ appId: String) -> Bool {
@@ -101,13 +117,13 @@ private extension WWAppFirstInstall {
             if let info = dictionary[appId] { return false }
             
             dictionary[appId] = installTime()
-            self.jsonString = dictionary._jsonString()
+            setJSONString(dictionary._jsonString())
 
             return true
         }
         
         let dict = [appId: installTime()]
-        self.jsonString = dict._jsonString()
+        setJSONString(dict._jsonString())
         
         return true
     }
@@ -123,7 +139,7 @@ private extension WWAppFirstInstall {
     /// - Returns: [String: Int]?
     func jsonDictionary() -> [String: Int]? {
         
-        guard let jsonObject = jsonString?._jsonObject(),
+        guard let jsonObject = getJSONString()?._jsonObject(),
               let dictionary = jsonObject as? [String: Int]
         else {
             return nil

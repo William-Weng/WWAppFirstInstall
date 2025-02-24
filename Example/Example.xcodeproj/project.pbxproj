@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAC9C1827016E78006663C2 /* WWPrint */; };
 		3DBCD87426F198EF00522E3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87326F198EF00522E3B /* AppDelegate.swift */; };
 		3DBCD87826F198EF00522E3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBCD87726F198EF00522E3B /* ViewController.swift */; };
 		3DBCD87B26F198EF00522E3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87926F198EF00522E3B /* Main.storyboard */; };
@@ -15,7 +14,9 @@
 		3DBCD88026F198F300522E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DBCD87E26F198F300522E3B /* LaunchScreen.storyboard */; };
 		8130039027D5D18100436128 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130038F27D5D18100436128 /* Constant.swift */; };
 		8130039227D5D19000436128 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130039127D5D19000436128 /* Extension.swift */; };
-		81EDB6762C64CC6200D76A70 /* WWAppFirstInstall in Frameworks */ = {isa = PBXBuildFile; productRef = 81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */; };
+		8181CD882D6C54A7005A2AAB /* WWPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 8181CD872D6C54A7005A2AAB /* WWPrint */; };
+		8181CD8B2D6C54B4005A2AAB /* WWAppFirstInstall in Frameworks */ = {isa = PBXBuildFile; productRef = 8181CD8A2D6C54B4005A2AAB /* WWAppFirstInstall */; };
+		8181CD8E2D6C5994005A2AAB /* WWAppFirstInstall in Frameworks */ = {isa = PBXBuildFile; productRef = 8181CD8D2D6C5994005A2AAB /* WWAppFirstInstall */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +36,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DAC9C1927016E78006663C2 /* WWPrint in Frameworks */,
-				81EDB6762C64CC6200D76A70 /* WWAppFirstInstall in Frameworks */,
+				8181CD882D6C54A7005A2AAB /* WWPrint in Frameworks */,
+				8181CD8B2D6C54B4005A2AAB /* WWAppFirstInstall in Frameworks */,
+				8181CD8E2D6C5994005A2AAB /* WWAppFirstInstall in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +141,9 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				3DAC9C1827016E78006663C2 /* WWPrint */,
-				81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */,
+				8181CD872D6C54A7005A2AAB /* WWPrint */,
+				8181CD8A2D6C54B4005A2AAB /* WWAppFirstInstall */,
+				8181CD8D2D6C5994005A2AAB /* WWAppFirstInstall */,
 			);
 			productName = Example;
 			productReference = 3DBCD87026F198EF00522E3B /* Example.app */;
@@ -171,8 +174,8 @@
 			);
 			mainGroup = 3DBCD86726F198EF00522E3B;
 			packageReferences = (
-				3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */,
-				817AC0BB2C64C91A00BA3DAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */,
+				8181CD862D6C54A7005A2AAB /* XCRemoteSwiftPackageReference "WWPrint" */,
+				8181CD8C2D6C5994005A2AAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */,
 			);
 			productRefGroup = 3DBCD87126F198EF00522E3B /* Products */;
 			projectDirPath = "";
@@ -282,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -338,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,33 +423,37 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */ = {
+		8181CD862D6C54A7005A2AAB /* XCRemoteSwiftPackageReference "WWPrint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWPrint";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.3.1;
 			};
 		};
-		817AC0BB2C64C91A00BA3DAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */ = {
+		8181CD8C2D6C5994005A2AAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWAppFirstInstall";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3DAC9C1827016E78006663C2 /* WWPrint */ = {
+		8181CD872D6C54A7005A2AAB /* WWPrint */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3DAC9C1727016E78006663C2 /* XCRemoteSwiftPackageReference "WWPrint" */;
+			package = 8181CD862D6C54A7005A2AAB /* XCRemoteSwiftPackageReference "WWPrint" */;
 			productName = WWPrint;
 		};
-		81EDB6752C64CC6200D76A70 /* WWAppFirstInstall */ = {
+		8181CD8A2D6C54B4005A2AAB /* WWAppFirstInstall */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 817AC0BB2C64C91A00BA3DAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */;
+			productName = WWAppFirstInstall;
+		};
+		8181CD8D2D6C5994005A2AAB /* WWAppFirstInstall */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8181CD8C2D6C5994005A2AAB /* XCRemoteSwiftPackageReference "WWAppFirstInstall" */;
 			productName = WWAppFirstInstall;
 		};
 /* End XCSwiftPackageProductDependency section */

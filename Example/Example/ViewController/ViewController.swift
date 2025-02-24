@@ -12,6 +12,8 @@ import WWAppFirstInstall
 // MARK: - ViewController
 final class ViewController: UIViewController {
 
+    let firstInstall = WWAppFirstInstall(key: "My-APP-Team")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         demo()
@@ -23,7 +25,7 @@ private extension ViewController {
     
     func demo() {
         
-        WWAppFirstInstall.shared.clean()
+        firstInstall.clean()
         
         let appIdArray = [
             "idv.william.Example1",
@@ -31,18 +33,18 @@ private extension ViewController {
             "idv.william.Example3",
         ]
         
-        wwPrint("DICT => \(WWAppFirstInstall.shared.dictionary())")
+        wwPrint("DICT => \(firstInstall.dictionary()!)")
 
         appIdArray.forEach { appId in
-            _ = WWAppFirstInstall.shared.insert(appId: appId)
-            wwPrint("DICT => \(WWAppFirstInstall.shared.dictionary()!)")
+            _ = firstInstall.insert(appId: appId)
+            wwPrint("DICT => \(firstInstall.dictionary()!)")
         }
         
         appIdArray.forEach { appId in
-            wwPrint(WWAppFirstInstall.shared.installTime(appId: appId))
+            wwPrint(firstInstall.installTime(appId: appId))
         }
         
-        _ = WWAppFirstInstall.shared.reset(appId: appIdArray[1])
-        wwPrint("DICT => \(WWAppFirstInstall.shared.dictionary()!)")
+        _ = firstInstall.reset(appId: appIdArray[1])
+        wwPrint("DICT => \(firstInstall.dictionary()!)")
     }
 }
