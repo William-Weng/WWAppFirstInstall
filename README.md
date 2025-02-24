@@ -53,7 +53,7 @@ private extension ViewController {
             "idv.william.Example3",
         ]
         
-        wwPrint("DICT => \(firstInstall.dictionary()!)")
+        wwPrint("DICT => \(firstInstall.dictionary())")
 
         appIdArray.forEach { appId in
             _ = firstInstall.insert(appId: appId)
